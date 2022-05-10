@@ -1,0 +1,39 @@
+@use "../styles";
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid styles.$LIGHT_GRAYISH_BLUE;
+    height: 7rem;
+}
+
+.logo-container {
+    margin-right: 5%;
+}
+
+.item-container {
+    width: 25vw;
+}
+
+.right-container {
+    width: 8vw;
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    align-items: center;
+
+
+    img {
+        width: 3rem;
+        height: auto;
+        border: 2px solid transparent;
+        border-radius: 2rem;
+        transition: ease-in-out .1s;
+
+        &:hover {
+            border: 2px solid styles.$ORANGE;
+            border-radius: 2rem;
+            cursor: pointer;
+        }
+    }
+}

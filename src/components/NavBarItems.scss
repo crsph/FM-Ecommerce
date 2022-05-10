@@ -1,0 +1,22 @@
+@use "../styles";
+
+.navbar-item-container {
+    display: flex;
+    justify-content: space-between;
+
+    &__item {
+        color: styles.$DARK_GRAYISH_BLUE;
+        height: 7rem;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        border-bottom: 3px solid transparent;
+        transition: ease-in-out .1s;
+
+        &:hover {
+            color: styles.$BLACK;
+            border-bottom: 3px solid styles.$ORANGE;
+            cursor: pointer;
+        }
+    }
+}
