@@ -1,0 +1,57 @@
+@use "../styles";
+
+.slide-container {
+    width: 30vw;
+    position: relative;
+    padding-top: 30vw;
+    margin: 20px auto;
+    border-radius: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+
+    &__image {
+        width: 30vw;
+        position: absolute;
+        border-radius: 1.5rem;
+        left: 0;
+        top: 0;
+        transition: all 0.5s;
+    }
+
+    input[name="product"] {
+        display: none;
+    }
+
+    input[name="product"]:checked+label {
+        border: 2px solid styles.$ORANGE;
+        border-radius: 1.15rem;
+
+        img {
+            opacity: .2;
+        }
+    }
+
+    input[name="product"]~img {
+        opacity: 0;
+    }
+
+    input[name="product"]:checked+label+img {
+        opacity: 1;
+    }
+
+    label {
+        margin-top: .5rem;
+        float: left;
+        cursor: pointer;
+        // transition: ease-in-out 0.5s;
+
+        img {
+            display: block;
+            border-radius: 1rem;
+        }
+
+        img:hover {
+            opacity: 0.5;
+        }
+    }
+}
