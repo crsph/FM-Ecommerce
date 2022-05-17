@@ -40,10 +40,86 @@
     }
 
     label {
+        margin-top: 2rem;
+        float: left;
+        cursor: pointer;
+
+        img {
+            display: block;
+            border-radius: 1rem;
+            width: 6vw;
+        }
+
+        img:hover {
+            opacity: 0.5;
+        }
+    }
+}
+
+.overlay-preview {
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    visibility: hidden;
+    transition: ease-in-out .2s;
+}
+
+.overlay-preview.active {
+    background-color: rgba(0, 0, 0, 0.7);
+    visibility: visible;
+}
+
+.preview-slide-container {
+    width: 30vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding-top: 30vw;
+    margin: 20px auto;
+    border-radius: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    visibility: hidden;
+    transform: translate(-50%, -50%);
+    transition: ease-in-out .2s;
+
+    &__image {
+        width: 30vw;
+        position: absolute;
+        border-radius: 1.5rem;
+        left: 0;
+        top: 0;
+        transition: all 0.5s;
+    }
+
+    input[name="preview-product"] {
+        display: none;
+    }
+
+    input[name="preview-product"]:checked+label {
+        border: 2px solid styles.$ORANGE;
+        border-radius: 1.15rem;
+
+        img {
+            opacity: .2;
+        }
+    }
+
+    input[name="preview-product"]~img {
+        opacity: 0;
+    }
+
+    input[name="preview-product"]:checked+label+img {
+        opacity: 1;
+    }
+
+    label {
         margin-top: .5rem;
         float: left;
         cursor: pointer;
-        // transition: ease-in-out 0.5s;
 
         img {
             display: block;
@@ -54,4 +130,8 @@
             opacity: 0.5;
         }
     }
+}
+
+.preview-slide-container.active {
+    visibility: visible;
 }

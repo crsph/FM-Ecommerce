@@ -4,6 +4,12 @@
     padding: 0 10vw;
 }
 
+.grid-column-container {
+    padding-top: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 @media all and (max-width: styles.$MOBILE) {
     .root-container {
         padding: 0;
