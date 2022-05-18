@@ -1,1 +1,48 @@
 @use "../styles";
+
+.description-container {
+    width: 35vw;
+    padding: 0 1rem;
+
+    &__company-name {
+        color: styles.$ORANGE;
+        font-weight: styles.$FONT_WEIGHT_700;
+        font-size: .8em;
+        letter-spacing: .2em;
+    }
+
+    &__sneaker-name {
+        font-weight: styles.$FONT_WEIGHT_700;
+        font-size: 3em;
+        margin: 1rem 0 2rem 0;
+    }
+
+    &__sneaker-description {
+        color: styles.$DARK_GRAYISH_BLUE;
+        font-size: 1.1em;
+        line-height: 1.6em;
+    }
+
+
+}
+
+.price-container {
+    display: flex;
+    align-items: center;
+
+    &__sneaker-price {
+        font-weight: styles.$FONT_WEIGHT_700;
+        font-size: 2em;
+        margin: 0;
+    }
+
+    &__sneaker-discount {
+        margin-left: 1rem;
+        font-weight: styles.$FONT_WEIGHT_700;
+        font-size: 1.1em;
+        color: styles.$ORANGE;
+        background-color: hsl(26, 100%, 93%);
+        padding: .3rem .6rem;
+        border-radius: .3em;
+    }
+}
