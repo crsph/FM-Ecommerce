@@ -1,6 +1,9 @@
 @use "../styles";
 
 .description-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 35vw;
     padding: 0 1rem;
 
@@ -14,7 +17,7 @@
     &__sneaker-name {
         font-weight: styles.$FONT_WEIGHT_700;
         font-size: 3em;
-        margin: 1rem 0 2rem 0;
+        margin: .3rem 0 1rem 0;
     }
 
     &__sneaker-description {
@@ -23,7 +26,13 @@
         line-height: 1.6em;
     }
 
-
+    &__previous-price {
+        font-weight: styles.$FONT_WEIGHT_700;
+        color: styles.$GRAYISH_BLUE;
+        text-decoration: line-through;
+        font-size: 1.1em;
+        margin: 0;
+    }
 }
 
 .price-container {
@@ -43,6 +52,94 @@
         color: styles.$ORANGE;
         background-color: hsl(26, 100%, 93%);
         padding: .3rem .6rem;
-        border-radius: .3em;
+        border-radius: .3rem;
+    }
+}
+
+.add-to-cart-container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 30% 60%;
+    margin-top: 2rem;
+
+    &__add-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        width: 100%;
+        background-color: styles.$ORANGE;
+        color: styles.$WHITE;
+        font-weight: styles.$FONT_WEIGHT_700;
+        border-radius: .6rem;
+        transition: ease-in-out .2s;
+
+        &:hover {
+            background-color: hsl(26, 100%, 70%);
+            cursor: pointer;
+        }
+
+        p {
+            margin: 0 0 0 1rem;
+        }
+    }
+}
+
+.product-counter-container {
+    display: flex;
+
+    &__minus-button {
+        padding: 0 1rem;
+        border-radius: .6rem 0 0 .6rem;
+        border: 0;
+        background-color: styles.$LIGHT_GRAYISH_BLUE;
+        transition: ease-in-out .2s;
+
+        svg {
+            display: inline-block;
+            vertical-align: middle;
+            fill: styles.$ORANGE;
+            transition: ease-in-out .2s;
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            svg {
+                fill: hsl(26, 100%, 70%)
+            }
+        }
+    }
+
+    &__plus-button {
+        padding: 0 1rem;
+        border-radius: 0 .6rem .6rem 0;
+        border: 0;
+        background-color: styles.$LIGHT_GRAYISH_BLUE;
+        transition: ease-in-out .2s;
+
+        svg {
+            display: inline-block;
+            vertical-align: middle;
+            fill: styles.$ORANGE;
+            transition: ease-in-out .2s;
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            svg {
+                fill: hsl(26, 100%, 70%)
+            }
+        }
+    }
+
+    &__product-amount {
+        font-weight: styles.$FONT_WEIGHT_700;
+        padding: 1rem 0;
+        width: 100%;
+        text-align: center;
+        background-color: styles.$LIGHT_GRAYISH_BLUE;
+        margin: 0;
     }
 }
