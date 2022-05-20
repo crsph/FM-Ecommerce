@@ -72,11 +72,16 @@
         color: styles.$WHITE;
         font-weight: styles.$FONT_WEIGHT_700;
         border-radius: .6rem;
+        box-shadow: 0 1.5em 1.5em hsl(26, 100%, 90%);
         transition: ease-in-out .2s;
 
         &:hover {
             background-color: hsl(26, 100%, 70%);
             cursor: pointer;
+        }
+
+        svg {
+            fill: styles.$WHITE;
         }
 
         p {

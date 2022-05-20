@@ -52,8 +52,10 @@ export default function NavBar() {
         </div>
 
         <div className="right-container">
-          <Cart />
-
+          <button className="cart-button">
+            <Cart />
+            <span className="cart-button__cart-count"></span>
+          </button>
           <img src={Avatar} alt="Avatar" />
         </div>
       </nav>

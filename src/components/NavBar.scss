@@ -20,12 +20,10 @@
 }
 
 .right-container {
-    width: 8vw;
     display: flex;
     justify-content: space-between;
     margin-left: auto;
     align-items: center;
-
 
     img {
         width: 3rem;
@@ -40,6 +38,38 @@
             cursor: pointer;
         }
     }
+}
+
+.cart-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    width: 3rem;
+    height: 7rem;
+    margin-right: 2.5rem;
+
+    &__cart-count {
+        position: absolute;
+        top: 2.5rem;
+        right: .4rem;
+        width: 1.3rem;
+        height: .8rem;
+        background-color: styles.$ORANGE;
+        color: styles.$WHITE;
+        border-radius: 1em;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    svg {
+        fill: hsl(219, 9%, 45%);
+    }
+
 }
 
 .navbar-item-container {
