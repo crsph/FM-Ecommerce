@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { ReactComponent as Cart } from "../assets/icon-cart.svg";
 import { ReactComponent as Close } from "../assets/icon-close.svg";
 import { ReactComponent as Menu } from "../assets/icon-menu.svg";
@@ -7,6 +8,8 @@ import { ReactComponent as Logo } from "../assets/logo.svg";
 import "./NavBar.scss";
 
 export default function NavBar() {
+  const amount = useSelector((state) => state.product.amount);
+
   const navBarItems = ["Collections", "Men", "Women", "About", "Contact"];
   const [isMenuActive, setMenuActive] = useState(false);
 
@@ -54,7 +57,7 @@ export default function NavBar() {
         <div className="right-container">
           <button className="cart-button">
             <Cart />
-            <span className="cart-button__cart-count"></span>
+            <span className="cart-button__cart-count">{amount}</span>
           </button>
           <img src={Avatar} alt="Avatar" />
         </div>
