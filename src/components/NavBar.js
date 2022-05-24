@@ -6,15 +6,25 @@ import { ReactComponent as Menu } from "../assets/icon-menu.svg";
 import Avatar from "../assets/image-avatar.png";
 import { ReactComponent as Logo } from "../assets/logo.svg";
 import "./NavBar.scss";
+import CartDescription from "./CartDescription";
 
 export default function NavBar() {
   const amount = useSelector((state) => state.product.amount);
 
   const navBarItems = ["Collections", "Men", "Women", "About", "Contact"];
   const [isMenuActive, setMenuActive] = useState(false);
+  const [isCartDescriptionVisible, setCartDescriptionVisible] = useState(false);
 
   const toggleMenu = () => {
     setMenuActive(!isMenuActive);
+  };
+
+  const setCartVisible = () => {
+    setCartDescriptionVisible(true);
+  };
+
+  const setCartInvisible = () => {
+    setCartDescriptionVisible(false);
   };
 
   return (
@@ -55,11 +65,16 @@ export default function NavBar() {
         </div>
 
         <div className="right-container">
-          <button className="cart-button">
+          <button
+            onMouseEnter={setCartVisible}
+            onMouseLeave={setCartInvisible}
+            className="cart-button"
+          >
+            {isCartDescriptionVisible && <CartDescription />}
             <Cart />
             <span className="cart-button__cart-count">{amount}</span>
           </button>
-          <img src={Avatar} alt="Avatar" />
+          <img className="right-container__avatar" src={Avatar} alt="Avatar" />
         </div>
       </nav>
     </>
