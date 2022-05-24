@@ -36,13 +36,12 @@ export default function CarouselSlider() {
 
   const previewImage = () => {
     setPreviewActive(!isPreviewActive);
-    console.log(isPreviewActive);
   };
 
   return (
     <>
       <div className="slide-container">
-        {productImages.map((item, index) => {
+        {productImages.map((item) => {
           return (
             <>
               <input
