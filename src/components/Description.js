@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+
 import { ReactComponent as CartIcon } from "../assets/icon-cart.svg";
 import { ReactComponent as MinusIcon } from "../assets/icon-minus.svg";
 import { ReactComponent as PlusIcon } from "../assets/icon-plus.svg";
 import { addProductToCart } from "../features/product/productSlice";
+
 import "./Description.scss";
 
 export default function Description() {
@@ -14,9 +16,9 @@ export default function Description() {
     sneakerName: "Fall Limited Edition Sneakers",
     sneakerDescription:
       "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.",
-    sneakerPrice: "$125.00",
+    sneakerPrice: 125.0,
     sneakerDiscount: "50%",
-    sneakerPreviousPrice: "$250.00",
+    sneakerPreviousPrice: 250.0,
   };
 
   const addProduct = () => {
@@ -42,14 +44,14 @@ export default function Description() {
       </p>
       <div className="price-container">
         <p className="price-container__sneaker-price">
-          {productObject.sneakerPrice}
+          ${productObject.sneakerPrice}
         </p>
         <p className="price-container__sneaker-discount">
           {productObject.sneakerDiscount}
         </p>
       </div>
       <p className="description-container__previous-price">
-        {productObject.sneakerPreviousPrice}
+        ${productObject.sneakerPreviousPrice}
       </p>
 
       <div className="add-to-cart-container">
@@ -72,13 +74,7 @@ export default function Description() {
         </div>
         <button
           onClick={() =>
-            dispatch(
-              addProductToCart(
-                productObject.sneakerName,
-                productObject.sneakerPrice,
-                productAmount
-              )
-            )
+            dispatch(addProductToCart({ productObject, productAmount }))
           }
           className="add-to-cart-container__add-button"
         >

@@ -3,20 +3,13 @@ import { createSlice } from "@reduxjs/toolkit";
 export const productSlice = createSlice({
   name: "product",
   initialState: {
-    sneakerName: "",
-    sneakerPrice: 0.0,
+    productObject: {},
     amount: 0,
   },
   reducers: {
-    // increment: (state) => {
-    //   state.amount += 1;
-    // },
-    // decrement: (state) => {
-    //   state.amount -= 1;
-    // },
     addProductToCart: (state, action) => {
-      console.log(action);
-      state.amount = action.payload;
+      state.productObject = action.payload.productObject;
+      state.amount = action.payload.productAmount;
     },
   },
 });
