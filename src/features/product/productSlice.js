@@ -11,10 +11,14 @@ export const productSlice = createSlice({
       state.productObject = action.payload.productObject;
       state.amount = action.payload.productAmount;
     },
+    emptyCart: (state) => {
+      state.productObject = {};
+      state.amount = 0;
+    }
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, addProductToCart } = productSlice.actions;
+export const { addProductToCart, emptyCart } = productSlice.actions;
 
 export default productSlice.reducer;

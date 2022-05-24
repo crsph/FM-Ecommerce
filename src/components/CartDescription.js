@@ -1,11 +1,13 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ProductThumbOne from "../assets/image-product-1-thumbnail.jpg";
 import { ReactComponent as Delete } from "../assets/icon-delete.svg";
 
 import "./CartDescription.scss";
+import { emptyCart } from "../features/product/productSlice";
 
 export default function () {
+  const dispatch = useDispatch();
   const productAmount = useSelector((state) => state.product.amount);
   const productObject = useSelector((state) => state.product.productObject);
   const parsedProductPrice = parseFloat(productObject.sneakerPrice).toFixed(2);
@@ -34,7 +36,7 @@ export default function () {
             </p>
           </div>
 
-          <Delete />
+          <Delete onClick={() => dispatch(emptyCart())} />
         </div>
 
         <button className="cart-description-container__checkout-button">
